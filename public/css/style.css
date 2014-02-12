@@ -1,0 +1,324 @@
+body {
+    background: #696969;
+    padding: 0px;
+    margin: 0px;
+    width: 960px;
+}
+
+input {
+    width: 150px;
+}
+
+input[type=text] {
+    line-height: 14px;
+    margin: 10px 0;
+    padding: 6px 15px;
+    border: 0;
+    outline: none;
+
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 0px 1px 1px rgba(255,255,255, .2);
+
+    -webkit-border-radius: 26px;
+    -moz-border-radius: 26px;
+    border-radius: 26px;
+
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+/*
+    CSS таблицы групп
+*/
+thead {
+    font-size: 22px;
+    background: #BC8F8F; 
+}
+
+thead, td {
+    width: 125px;
+    padding-left: 30px;
+    
+}
+
+tbody {
+     border-top: 1px solid black; 
+}
+
+h1 {
+    height: 60px;
+    margin: 0px;
+    padding: 15px 0px 0px 0px;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 48px;
+    font-weight: 700;
+    border-bottom: 2px solid black;  
+    background-color: rgba(219,87,5,1);
+    border-radius: 8px 8px 0px 0px;
+}
+
+.group_people {
+    position: relative;
+    width: 500px;
+
+    background-color: #CD5C5C;
+    margin: 50px auto;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+/*
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(255,255,255, .2), inset 0px 1px 1px 0px rgb(0,0,0);
+    -moz-box-shadow: 0px 1px 1px 0px rgba(255,255,255, .2), inset 0px 1px 1px 0px rgb(0,0,0);
+    box-shadow: 0px 1px 1px 0px rgba(255,255,255, .2), inset 0px 1px 1px 0px rgb(0,0,0);
+*/
+}
+
+.button_new_person {
+    width: 160px;
+    font-weight: 700;
+    font-size: 48px;
+    display: block; 
+}
+
+.button_new_person, #preview_information, #save, #edit {
+    position: relative;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: rgba(219,87,5,1);
+    font-family: 'Yanone Kaffeesatz';
+    
+    padding: 4px;
+
+    margin: 20px auto;
+    
+    text-align: center;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+
+    -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+      
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+}
+
+.delete,.edit {
+    background-color:#4b3f39;
+    font-family: 'Open Sans', sans-serif;
+    font-size:12px;
+    text-decoration:none;
+    color:#fff;
+    position:relative;
+    padding:10px 20px;
+    padding-right:50px;
+    background-image: linear-gradient(bottom, rgb(62,51,46) 0%, rgb(101,86,78) 100%);
+    border-radius: 10px;
+    box-shadow: inset 0px 1px 0px #9e8d84, 0px 5px 0px 0px #322620, 0px 10px 5px #999;
+}
+
+.delete:active, .edit:active {
+    top:3px;
+    background-image: linear-gradient(bottom, rgb(62,51,46) 100%, rgb(101,86,78) 0%);
+    box-shadow: inset 0px 1px 0px #9e8d84, 0px 2px 0px 0px #322620, 0px 5px 3px #999;
+}
+
+.delete::before, .edit::before {
+    background-color:#322620;
+    background-repeat:no-repeat;
+    background-position:center center;
+    content:"";
+    width:25px;
+    height:25px;
+    position:absolute;
+    right:15px;
+    top:50%;
+    margin-top:-9px;
+    border-radius: 50%;
+    box-shadow: inset 0px 1px 0px #19120f, 0px 1px 0px #827066;
+}
+
+.delete:active::before, .edit:active::before {
+    top:50%;
+    margin-top:-12px;
+    box-shadow: inset 0px 1px 0px #827066, 0px 3px 0px #19120f, 0px 6px 3px #382e29;
+}
+
+.delete::before  {
+    background-image:url(../images/cross_48_7164.png);
+}
+
+.edit::before  {
+    background-image:url(../images/advancedsettings_4557.png);
+}
+
+/*
+    CSS User Form
+*/
+
+.main {
+    position: relative;
+    width: 500px;
+    height: 350px;
+
+    background-color: #CD5C5C;
+    margin: 50px auto;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.button {
+    font:15px Calibri, Arial, sans-serif;
+
+    /* A semi-transparent text shadow */
+    text-shadow:1px 1px 0 rgba(255,255,255,0.4);
+
+    /* The following two rules are fallbacks, in case
+       the browser does not support multiple backgrounds. */
+
+    background-position:bottom left;
+    background-image:url(../images/button_bg.png);
+
+    /* CSS3 background positioning property with multiple values. The background
+       images themselves are defined in the individual color classes */
+
+    background-position:bottom left, top right, 0 0, 0 0;
+    background-clip:border-box;
+
+    /* Applying a default border radius of 8px */
+
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+
+    /* A 1px highlight inside of the button */
+
+    -moz-box-shadow:0 0 1px #fff inset;
+    -webkit-box-shadow:0 0 1px #fff inset;
+    box-shadow:0 0 1px #fff inset;
+
+    /* Animating the background positions with CSS3 */
+    /* Currently works only in Safari/Chrome */
+
+    -webkit-transition:background-position 1s;
+    -moz-transition:background-position 1s;
+    -o-transition:background-position 1s;
+    transition:background-position 1s;
+
+    color:#693e0a !important;
+    border:1px solid #bea280 !important;    
+    background-color: #e38d27;
+    
+    background-image:url(../images/button_bg.png), url(../images/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(232,189,45,1) 0,rgba(232,189,45,0) 100px),-moz-linear-gradient(#f1982f, #d4821f);
+    background-image:url(../images/button_bg.png), url(../images/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(232,189,45,1)), to(rgba(232,189,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1982f), to(#d4821f));
+
+}
+
+.button:hover {
+
+    /* The first rule is a fallback, in case the browser
+       does not support multiple backgrounds
+    */
+    background-position:top left;
+    background-position:top left, bottom right, 0 0, 0 0;
+}
+
+.button {
+    width: 150px;
+    height: 60px;
+}
+
+#board {
+    margin: 15px 30px 15px 30px;
+    position: relative;
+    height: 190px;
+}
+
+#tab_name, #tab_contact, #tab_personal {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#inputFormName, #inputFormPersonal {
+    top: 10px;
+    left: 230px;
+    position: absolute;
+}
+
+#inputFormContacts {
+    position: absolute;
+    top: -20px;
+    left: 230px;
+}
+
+#view {
+    position: relative;
+    height: 200px;
+}
+
+#list_view {
+    top: 20px;
+    left: 100px;
+    line-height: 1.5;
+    list-style-type: none;
+    margin: 20px 10px 0px 100px; 
+}
+
+.user_date {
+    position: absolute;
+    left: 190px;
+}
+
+.hiden {
+    display: none;
+}
+
+#edit {
+    position: absolute;
+    font-size: 14px;
+    top: 210px;
+    right: 50px;
+    height: 30px;
+    width: 100px;
+}
+
+.button_line {
+    position: relative;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+#preview_information {
+    position: absolute;
+    font-size: 14px;
+    top: 10px;
+    right: 50px;
+    height: 30px;
+    width: 100px;
+}
+
+#save {
+    position: absolute;
+    font-size: 14px;
+    top: 10px;
+    right: 160px;
+    height: 30px;
+    width: 100px;
+}

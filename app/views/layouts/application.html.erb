@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PersonApp</title>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+    <script id="list_group" type="text/template"> 
+        <td><span>{{ first_name }}</span></td> 
+            <td>{{ sex }}</td> 
+
+        <td>
+            <div class = "edit">
+                <span>Edit</span>
+            </div>
+        </td>
+
+        <td>
+            <div class = "delete">
+                Delete
+            </div>
+        </td>            
+    </script>
+
+    <script type="text/template" id = "table_person">
+        <div class = "group_people">   
+            <h1>List group</h1>
+            
+            <div class = "border">
+                <table id = "table-p">
+                    <thead>
+                        <td>Name</td>
+                        <td>Sex</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class = 'button_new_person'>New Person</div>
+            
+            <div id = "form"></div>
+        </div>
+    </script>
+
+    <script id="list" type="text/template">
+        <li>
+            Name:
+            <span class = "user_date">{{ first_name }}</span>
+        </li>
+        <li>
+            Last Name:
+            <span class = "user_date">{{ last_name }}</span>
+        </li>
+        <li>
+            Skype:
+            <span class = "user_date">{{ skype }}</span>
+        </li>
+        <li>
+            Email:
+            <span class = "user_date">{{ email }}</span>
+        </li>
+        <li>
+            Phone:
+            <span class = "user_date">{{ phone }}</span>
+        </li>
+        <li>
+            Age:
+            <span class = "user_date">{{ age }}</span>
+        </li>
+        <li>
+            Sex:
+            <span class = "user_date">{{ sex }}</span>
+        </li>
+    </script>
+
+    <script id = "form_person" type="text/template">
+        <div class = "main">
+            <h1>Form Person</h1>
+
+            <div id = "board">
+                <div id = "tab_name">
+                    <div class = "button"><h2>Name</h2></div>
+                </div>
+
+                <div id = "inputFormName">
+                    <p>Name<br />
+                    <input id = "first_name" type = "text" value = "{{ first_name }}" />
+                    </p>
+                    <p>Last Name<br />
+                    <input id = "last_name" type = "text" value = "{{ last_name }}" />
+                    </p>
+                </div>
+
+                <div id = "tab_contact">
+                    <div class = "button"><h2>Contacts</h2></div>
+                </div>
+
+                <div id = "inputFormContacts" class = "hiden">
+                    <p>Skype<br />
+                    <input id = "skype" type = "text" value = "{{ skype }}"  />
+                    </p>
+                    <p>Email<br />
+                    <input id = "email" type = "text" value = "{{ email }}"  />
+                    </p>
+                    <p>Phone<br />
+                    <input id = "phone" type = "text" value = "{{ phone }}"  />
+                    </p>
+                </div>
+
+                <div id = "tab_personal">
+                    <div class = "button"><h2>Personal</h2></div>
+                </div>
+
+                <div id = "inputFormPersonal" class = "hiden">
+                    <p>Age<br />
+                    <input id = "age" type = "text" value = "{{ age }}" />
+                    </p>
+                    <p>Sex<br />
+                    
+                    <select id = "sex" value = "{{ sex }}">
+                        <option value = "M">Male</option>
+                        <option value = "F">Female</option>
+                    </select>
+                    </p>
+                </div>
+            </div>
+
+            <div id = "view" class = "hiden">
+                <div id="list_view"></div>
+
+                <div id = "button_form">
+                    <button id = "edit">
+                        Edit
+                    </button>
+                </div>
+            </div>
+
+            <div class = "button_line">
+                <button id = "preview_information">
+                    Preview
+                </button>
+
+                <button id = "save">
+                    OK
+                </button>
+            </div>                
+        </div>
+    </script>
+
+    <link rel = "stylesheet" href="css/style.css">
+
+    <script src = "js/lib/jquery.js"></script>
+
+    <script>
+        $.ajaxSetup({
+    headers: {
+       'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+       // 'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
+    }
+});
+    </script>
+
+    <script src = "js/lib/underscore.js"></script>
+
+    <script>
+        _.templateSettings = {
+            interpolate : /\{\{(.+?)\}\}/g
+        };
+    </script>
+
+    <script src = "js/lib/backbone.js"></script>
+    <script src = "js/lib/backbone-mediator.js"></script>
+
+    <script src = "js/functional/user_form.js"></script>
+    <script src = "js/functional/modelPerson.js"></script>
+    <script src = "js/functional/peopleCollection.js"></script>
+    <script src = "js/functional/peopleView.js"></script>  
+    
+    <script src = "js/functional/newPersonView.js"></script>
+    <script src = "js/functional/personView.js"></script>
+    <script src = "js/functional/main.js"></script>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
